@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Direction.cs" />
     <Compile Include="Grid.cs" />
     <Compile Include="GridContents.cs" />
     <Compile Include="GridReference.cs" />

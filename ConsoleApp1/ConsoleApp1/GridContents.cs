@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1
+﻿namespace BattleShips
 {
-    public enum GridContents { undecided, hit, miss, boat };
+    public enum GridContents { undecided, empty, hit, miss, boat };
 }

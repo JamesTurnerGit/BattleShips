@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace BattleShips
 {
 
     public class GridReference : IGridReference
@@ -13,7 +13,7 @@ namespace ConsoleApp1
         public int ThisY { get; }
         public GridContents Contents { get; set; }
 
-        public GridReference(int x, int y, GridContents content = GridContents.undecided)
+        public GridReference(int x, int y, GridContents content = GridContents.empty)
         {
             ThisX = x;
             ThisY = y;
@@ -23,6 +23,28 @@ namespace ConsoleApp1
         public bool Same(GridReference other)
         {
             return ThisX == other.ThisX && ThisY == other.ThisY;
+        }
+
+        public GridReference RelativePoint(int distance, Direction direction)
+        {
+            int x = ThisX;
+            int y = ThisY;
+            switch (direction)
+            {
+                case Direction.North:
+                    x = ThisX + distance;
+                    break;
+                case Direction.East:
+                    y = ThisY + distance;
+                    break;
+                case Direction.West:
+                    y = ThisY - distance;
+                    break;
+                case Direction.South:
+                    x = ThisX - distance;
+                    break;
+            }
+            return new GridReference(x,y,GridContents.undecided);
         }
     }
 }

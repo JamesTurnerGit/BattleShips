@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ConsoleApp1;
+using BattleShips;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.Tests
+namespace BattleShips.Tests
 {
     [TestClass]
     public class GridTests
@@ -36,9 +36,7 @@ namespace ConsoleApp1.Tests
         [TestMethod]
         public void CanAddPointsOfInterest()
         {
-            
             Grid grid = new Grid();
-            Console.Write(GridContents.hit);
             GridReference point = new GridReference(x: 1,y: 1,content: GridContents.hit);
 
             Console.Write(point);
@@ -52,27 +50,10 @@ namespace ConsoleApp1.Tests
         [TestMethod]
         public void CantAddPointsOfInterestOutsideRange()
         {
-
             Grid grid = new Grid();
-            Console.Write(GridContents.hit);
             GridReference point = new GridReference(x: -5, y: -5, content: GridContents.hit);
 
-            Console.Write(point);
-
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => grid.AddPointOfInterest(reference: point));
-        }
-
-        [TestMethod]
-        public void CantAddPointsOfInterestWithBadContents()
-        {
-
-            Grid grid = new Grid();
-            Console.Write(GridContents.hit);
-            GridReference point = new GridReference(x: 5, y: 5, content: GridContents.undecided);
-
-            Console.Write(point);
-
-            Assert.ThrowsException<ArgumentException>(() => grid.AddPointOfInterest(reference: point));
         }
     }
 }

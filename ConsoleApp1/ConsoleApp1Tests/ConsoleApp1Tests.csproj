@@ -64,9 +64,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleApp1\ConsoleApp1.csproj">
+    <ProjectReference Include="..\ConsoleApp1\BattleShips.csproj">
       <Project>{70E37A2A-8B7A-419C-8236-BD151B173763}</Project>
-      <Name>ConsoleApp1</Name>
+      <Name>BattleShips</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

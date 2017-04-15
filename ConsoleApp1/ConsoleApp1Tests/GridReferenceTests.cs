@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ConsoleApp1;
+using BattleShips;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.Tests
+namespace BattleShips.Tests
 {
     [TestClass]
     public class GridReferenceTests
@@ -38,7 +38,7 @@ namespace ConsoleApp1.Tests
         {
             var reference = new GridReference(x: 10, y: 12);
             var actual = reference.Contents;
-            Assert.AreEqual(actual, GridContents.undecided);
+            Assert.AreEqual(actual, GridContents.empty);
         }
 
         [TestMethod]
